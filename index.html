@@ -13,89 +13,18 @@
 </head>
 <body>
   <main class="app-shell">
-    <header class="hero">
-      <div class="brand"><span class="squirrel" aria-hidden="true">🐿️</span><h1>NY Squirrel Forecast</h1></div>
-      <p>Upstate New York weather + seasonal<br class="mobile-break" /> squirrel activity planner</p>
-    </header>
-
+    <header class="hero"><div class="brand"><span class="squirrel" aria-hidden="true">🐿️</span><h1>NY Squirrel Forecast</h1></div><p>Upstate New York weather + seasonal<br />squirrel activity planner</p></header>
     <section class="controls card" aria-labelledby="region-label">
       <label id="region-label" for="region">UPSTATE REGION</label>
-      <div class="select-wrap">
-        <select id="region" aria-label="Select New York region">
-          <option>Central New York</option><option>Adirondacks</option><option>Capital Region</option>
-          <option>Catskills</option><option>Finger Lakes</option><option>Hudson Valley</option>
-          <option>Southern Tier</option><option>Western New York</option>
-        </select>
-      </div>
+      <div class="select-wrap"><select id="region" aria-label="Select New York region"><option>Central New York</option><option>Adirondacks</option><option>Capital Region</option><option>Catskills</option><option>Finger Lakes</option><option>Hudson Valley</option><option>Southern Tier</option><option>Western New York</option></select></div>
       <button id="update" class="primary-button">UPDATE FORECAST</button>
       <p class="updated" id="updated">Central New York <span>•</span> live 7-day forecast</p>
-
-      <div class="weather-summary" aria-live="polite">
-        <div class="mini-stat">
-          <label>NOW</label>
-          <strong id="weather-now">Partly cloudy</strong>
-        </div>
-        <div class="mini-stat">
-          <label>TEMP</label>
-          <strong id="weather-temp">61°F</strong>
-        </div>
-        <div class="mini-stat">
-          <label>RAIN</label>
-          <strong id="weather-rain">38%</strong>
-        </div>
-        <div class="mini-stat">
-          <label>WIND</label>
-          <strong id="weather-wind">11 mph</strong>
-        </div>
-      </div>
+      <div class="weather-summary" aria-live="polite"><div class="mini-stat"><label>NOW</label><strong id="weather-now">Loading…</strong></div><div class="mini-stat"><label>TEMP</label><strong id="weather-temp">—</strong></div><div class="mini-stat"><label>RAIN</label><strong id="weather-rain">—</strong></div><div class="mini-stat"><label>WIND</label><strong id="weather-wind">—</strong></div></div>
     </section>
-
-    <nav class="tabs" aria-label="Forecast sections">
-      <button class="tab" data-tab="dashboard">Dashboard</button>
-      <button class="tab active" data-tab="outlook">7-Day Outlook</button>
-      <button class="tab" data-tab="details">Activity Details</button>
-    </nav>
-
-    <section id="dashboard" class="panel hidden">
-      <div class="card dashboard-card">
-        <p class="eyebrow">TODAY'S RECOMMENDATION</p>
-        <h2 id="recommendation">A fair morning for the woods</h2>
-        <p>Focus on mature oak and hickory edges during the first two hours after sunrise.</p>
-        <div class="stat-row">
-          <div><strong id="today-score">59%</strong><span>activity score</span></div>
-          <div><strong id="best-window">6:42 AM</strong><span>best start</span></div>
-          <div><strong id="wind-now">11 mph</strong><span>wind</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="outlook" class="panel">
-      <div class="card outlook-card"><h2>7-day activity outlook</h2><div id="forecast-list"></div></div>
-    </section>
-
-    <section id="details" class="panel hidden">
-      <div class="card details-card">
-        <h2>Activity details</h2>
-        <div class="detail-grid">
-          <div><span class="detail-icon">🌰</span><h3>Habitat focus</h3><p id="habitat-focus">Oak, hickory, beech, and mixed hardwood edges are the strongest habitat signals.</p></div>
-          <div><span class="detail-icon">🌅</span><h3>Best timing</h3><p id="best-timing">Plan for first light through mid-morning, with a second window near sunset.</p></div>
-          <div><span class="detail-icon">🍂</span><h3>Seasonal signal</h3><p id="seasonal-signal">Early fall feeding activity is influenced by food availability, temperature, and daylight.</p></div>
-          <div><span class="detail-icon">⚠️</span><h3>Stay safe</h3><p>Confirm current NYS DEC regulations, wear blaze orange where required, and identify your target.</p></div>
-        </div>
-
-        <div class="model-grid">
-          <div class="model-card">
-            <h3>Predictability model</h3>
-            <ul id="factor-list"></ul>
-          </div>
-          <div class="model-card">
-            <h3>Current DEC rules</h3>
-            <ul id="regulation-list"></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <nav class="tabs" aria-label="Forecast sections"><button class="tab" data-tab="dashboard">Dashboard</button><button class="tab active" data-tab="outlook">7-Day Outlook</button><button class="tab" data-tab="details">Activity Details</button></nav>
+    <section id="dashboard" class="panel hidden"><div class="card dashboard-card"><p class="eyebrow">TODAY'S RECOMMENDATION</p><h2 id="recommendation">Calculating conditions…</h2><p id="recommendation-detail">The score combines live weather with seasonal and habitat signals.</p><div class="stat-row"><div><strong id="today-score">—</strong><span>activity score</span></div><div><strong id="best-window">—</strong><span>best start</span></div><div><strong id="wind-now">—</strong><span>wind</span></div></div><div class="slider-block"><div class="slider-heading"><label for="predictability">ACTIVITY PREDICTABILITY</label><output id="predictability-value" for="predictability">50%</output></div><input id="predictability" type="range" min="0" max="100" value="50" step="1" aria-describedby="predictability-help" /><div class="slider-labels"><span>Unfavorable</span><span>Ideal</span></div><p id="predictability-help">Adjust the forecast sensitivity to see how conditions affect the activity estimate.</p></div></div></section>
+    <section id="outlook" class="panel"><div class="card outlook-card"><h2>7-day activity outlook</h2><div id="forecast-list"></div></div></section>
+    <section id="details" class="panel hidden"><div class="card details-card"><h2>Activity details</h2><div class="detail-grid"><div><span class="detail-icon">🌰</span><h3>Habitat focus</h3><p id="habitat-focus">—</p></div><div><span class="detail-icon">🌅</span><h3>Best timing</h3><p id="best-timing">—</p></div><div><span class="detail-icon">🍂</span><h3>Seasonal signal</h3><p id="seasonal-signal">—</p></div><div><span class="detail-icon">⚠️</span><h3>Stay safe</h3><p>Confirm current NYS DEC regulations, wear blaze orange where required, and identify your target.</p></div></div><div class="model-grid"><div class="model-card"><h3>Predictability model</h3><ul id="factor-list"></ul></div><div class="model-card"><h3>Current DEC rules</h3><ul id="regulation-list"></ul></div></div></div></section>
     <footer>Modeled activity is for planning only. Always follow current New York State hunting regulations.</footer>
   </main>
   <script src="script.js"></script>
