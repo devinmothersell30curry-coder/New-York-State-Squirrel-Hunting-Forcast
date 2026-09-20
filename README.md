@@ -1,22 +1,31 @@
-# NY Squirrel Forecast
+# New-York-State-Squirrel-Hunting-Forcast
 
-A responsive, mobile-first website for weather-informed squirrel activity planning across New York State regions.
+Public New York State squirrel hunting activity forecasts by region, with weather-informed predictions and safety guidance.
 
-## Features
+## Overview
 
-- Screenshot-inspired green-and-cream visual design
-- Region selector covering eight New York areas
-- Interactive seven-day activity outlook with score meters
-- Dashboard and activity details tabs
-- Responsive layout for phones, tablets, and desktop browsers
-- No build step or dependencies required
+This project models squirrel activity using a few interacting signals:
 
-## Run locally
+- weather conditions (temperature, rain, and wind)
+- seasonal squirrel activity patterns, including mating-season shifts
+- habitat and food availability (mast-heavy hardwoods, oak, hickory, beech)
+- daylight and feeding windows
+- current New York DEC rules for legal seasons, limits, and licensing
 
-Open `index.html` in a browser, or serve the folder with any static web server:
+## Local development
+
+Open `index.html` in a browser, or run a tiny static server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-The current forecast values are clearly modeled demo data. A production version can replace the data layer in `script.js` with a weather API and NYS DEC season/regulation data.
+## Data sources used
+
+- Open-Meteo weather API for regional temperature, rain, and wind
+- New York DEC squirrel regulations summary for season dates and bag limits (for planning and display, verify official DEC updates before hunting)
+- Modeled squirrel activity logic tuned for New York conditions
+
+## Note
+
+The values are designed for an informational forecast experience and should not replace current DEC regulations or local conditions.
